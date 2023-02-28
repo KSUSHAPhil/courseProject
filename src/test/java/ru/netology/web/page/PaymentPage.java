@@ -1,7 +1,7 @@
-package pages;
+package ru.netology.web.page;
 
 import com.codeborne.selenide.SelenideElement;
-import data.DataHelper;
+import ru.netology.mode.DataHelper;
 
 import java.time.Duration;
 
@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selenide.*;
 public class PaymentPage {
 
     private SelenideElement headingCardPayment = $x("//*[text()='Оплата по карте']");
-    private SelenideElement cardNumberField = $x("//*[text()='Номер карты']/following-sibling::*/input[@class='input__control']");
+    private SelenideElement  cardNumberField = $x("//*[text()='Номер карты']/following-sibling::*/input[@class='input__control']");
     private SelenideElement fieldMonth = $x("//*[text()='Месяц']/following-sibling::*/input[@class='input__control']");
     private SelenideElement fieldYear = $x("//*[text()='Год']/following-sibling::*/input[@class='input__control']");
-    private SelenideElement fieldOwner = $x("//*[text()='Владелец']/following-sibling::*/input[@class='input__control']");
+    private SelenideElement fieldOwner =  $x("//*[text()='Владелец']/following-sibling::*/input[@class='input__control']");
     private SelenideElement fieldCVC = $x("//*[text()='CVC/CVV']/following-sibling::*/input[@class='input__control']");
     private SelenideElement buttonContinue = $x("//*[text()='Продолжить']");
     private SelenideElement notificationStatusOk = $x("//*[text()='Операция одобрена Банком.']");
@@ -29,6 +29,7 @@ public class PaymentPage {
     private SelenideElement wrongFormatOwnerField = $x("//*[text()='Владелец']//following-sibling::span[@class='input__sub']");
     private SelenideElement notificationStatusError = $x("//*[text()='Ошибка! Банк отказал в проведении операции.']");
     private SelenideElement buttonSendARequest = $x("//*[text()='Отправляем запрос в Банк...']");
+
 
 
     public PaymentPage() {
@@ -134,25 +135,34 @@ public class PaymentPage {
         return fieldValue;
     }
 
-    public String getValueOwner() {
-        return getValue(fieldOwner);
+    public String getValueOwner(){
+       return getValue(fieldOwner);
     }
 
-    public String getValueMonth() {
+    public String getValueMonth(){
         return getValue(fieldMonth);
     }
 
-    public String getValueYear() {
+    public String getValueYear(){
         return getValue(fieldYear);
     }
 
-    public String getValueCVC() {
+    public String getValueCVC(){
         return getValue(fieldCVC);
     }
 
     public static String removeLastChar(String s) {
         return (s == null || s.length() == 0) ? null : (s.substring(0, s.length() - 1));
     }
+
+
+
+
+
+
+
+
+
 
 
 }

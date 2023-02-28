@@ -1,4 +1,4 @@
-package data;
+package ru.netology.mode;
 
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
